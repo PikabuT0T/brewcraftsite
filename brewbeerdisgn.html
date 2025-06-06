@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrewCraft - Landing Page Design System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Design System Section */
+        .design-system {
+            background: white;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .design-system h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .ui-section {
+            margin-bottom: 48px;
+        }
+
+        .ui-section h2 {
+            color: #d4af37;
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 8px;
+        }
+
+        /* Color Palette */
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .color-card {
+            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .color-swatch {
+            height: 100px;
+            width: 100%;
+        }
+
+        .color-info {
+            padding: 16px;
+            background: white;
+        }
+
+        .color-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .color-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Typography */
+        .typography-sample {
+            margin-bottom: 24px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .typography-sample h1 { font-size: 3rem; margin-bottom: 16px; }
+        .typography-sample h2 { font-size: 2.25rem; margin-bottom: 16px; }
+        .typography-sample h3 { font-size: 1.75rem; margin-bottom: 16px; }
+        .typography-sample h4 { font-size: 1.25rem; margin-bottom: 16px; }
+
+        /* Grid System */
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .grid-item {
+            background: #d4af37;
+            height: 40px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Components */
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .component {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #d4af37;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #b8941f;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #d4af37;
+            border-color: #d4af37;
+        }
+
+        .btn-secondary:hover {
+            background: #d4af37;
+            color: white;
+        }
+
+        /* Wireframe Sections */
+        .wireframe-section {
+            background: white;
+            margin-bottom: 0px;
+            border-radius: 0px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .wireframe-header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .wireframe-content {
+            padding: 0px 0px;
+        }
+
+        .wireframe {
+            max-width: 1400px;
+            margin: 0 auto;
+            border: 0px solid #ddd;
+            border-radius: 0px;
+            overflow: hidden;
+        }
+
+        /* Hero Section Wireframe */
+        .hero-wireframe {
+            /* background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); */
+            background-image: url('/img/2151639887.jpg'); /* Замініть 'your-image.jpg' на шлях до вашого зображення */
+            background-size: cover; /* Щоб зображення покривало весь блок */
+            background-position: center; /* Центрування зображення */
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+            height: 712px;
+            width: 1400 px;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+            font-weight: bold;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Navigation */
+        .nav-wireframe {
+            background: rgba(255,255,255,0.95);
+            padding: 16px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d4af37;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #d4af37;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            padding: 80px 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .product-image-ale {
+            height: 200px;
+            background-image: url('/img/1960x0.webp'); /* Замініть 'your-image.jpg' на шлях до вашого зображення */
+            background-size: cover; /* Щоб зображення покривало весь блок */
+            background-position: center; /* Центрування зображення */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .product-image-ipa {
+            height: 200px;
+            background-image: url('/img/iStock-598085982-Cropped-scaled.jpg'); /* Замініть 'your-image.jpg' на шлях до вашого зображення */
+            background-size: cover; /* Щоб зображення покривало весь блок */
+            background-position: center; /* Центрування зображення */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .product-image-stout {
+            height: 200px;
+            background-image: url('/img/2151639887.jpg'); /* Замініть 'your-image.jpg' на шлях до вашого зображення */
+            background-size: cover; /* Щоб зображення покривало весь блок */
+            background-position: center; /* Центрування зображення */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .product-image-wheat {
+            height: 200px;
+            background-image: url('/img/honey-wheat-beer-all-grain-recipe-beer-kit-indian-summer-red_800x.webp'); /* Замініть 'your-image.jpg' на шлях до вашого зображення */
+            background-size: cover; /* Щоб зображення покривало весь блок */
+            background-position: center; /* Центрування зображення */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+
+
+
+        .product-info {
+            padding: 24px;
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #2c3e50;
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 40px;
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            color: #2c3e50;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            color: #666;
+        }
+
+        .about-image {
+            height: 300px;
+            background-image: url('/img/friends-toasting-beer-celebrate.jpg'); /* Замініть 'your-image.jpg' на шлях до вашого зображення */
+            background-size: cover; /* Щоб зображення покривало весь блок */
+            background-position: center; /* Центрування зображення */
+            /* background: linear-gradient(45deg, #8b4513, #d2691e); */
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 40px;
+            background: white;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4af37;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 48px 40px 24px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 16px;
+            color: #d4af37;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #d4af37;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid #34495e;
+            color: #bdc3c7;
+        }
+
+        /* Modal Popup */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 40px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            animation: slideIn 0.3s ease;
+        }
+
+        .modal-content h2 {
+            color: #2c3e50;
+            margin-bottom: 16px;
+        }
+
+        .modal-content p {
+            color: #666;
+            margin-bottom: 24px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        .close:hover {
+            color: #d4af37;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-wireframe {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .product-grid {
+                padding: 40px 20px;
+            }
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        .specs-table th,
+        .specs-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .specs-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Landing Page Wireframes -->
+    
+    <!-- Page 1: Hero/Home -->
+    <div class="wireframe-section" id="home">
+        <div class="wireframe-content">
+            <div class="wireframe">
+                <div class="nav-wireframe">
+                    <div class="logo">
+                        <img class="mixed-shapes" src="/img/Screenshot2025-06-06205726.png" style="height: 27px; width: 27px"/>
+                        BrewCraft
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <a href="#products" class="btn btn-primary" onclick="openModal()">Order Now</a>
+                </div>
+                
+                <div class="hero-wireframe">
+                    <div class="hero-content">
+                    
+                        <h1>Premium Craft Beer</h1>
+                        <p>Discover the finest selection of artisanal beers, brewed with passion and tradition. Experience the perfect balance of flavor and quality.</p>
+                        <a href="#products" class="btn btn-primary" style="margin-right: 16px;">Explore Beers</a>
+                        <a href="#about" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2: Products -->
+    <div class="wireframe-section" id="products">
+        <div class="wireframe-content">
+            <div class="wireframe">
+                <div style="text-align: center; padding: 80px 40px 40px;">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 24px; color: #2c3e50;">Our Beer Collection</h2>
+                    <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto;">From light lagers to robust stouts, explore our carefully crafted selection</p>
+                </div>
+                
+                <div class="product-grid">
+                    <div class="product-card">
+                        
+                        <div class="product-image-ale">
+                               
+                        </div>
+                        <div class="product-info">
+                            <h3>Golden Harvest Ale</h3>
+                            <p>A smooth, golden ale with hints of honey and citrus. Perfect for any occasion.</p>
+                            <a href="#contact" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image-stout">
+                               
+                        </div>
+                        <div class="product-info">
+                            <h3>Midnight Stout</h3>
+                            <p>Rich, dark stout with notes of chocolate and coffee. A bold choice for beer enthusiasts.</p>
+                            <a href="#contact" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image-ipa"></div>
+                        <div class="product-info">
+                            <h3>Hoppy IPA</h3>
+                            <p>Crisp IPA with intense hop flavor and citrusy aroma. For those who love bold taste.</p>
+                            <a href="#contact" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image-wheat"></div>
+                        <div class="product-info">
+                            <h3>Summer Wheat</h3>
+                            <p>Light, refreshing wheat beer with subtle spice notes. Perfect for warm days.</p>
+                            <a href="#contact" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3: About -->
+    <div class="wireframe-section" id="about">
+        <div class="wireframe-content">
+            <div class="wireframe">
+                <div class="about-section">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <h2>Our Brewing Story</h2>
+                            <p>Founded in 2015, BrewCraft has been dedicated to creating exceptional craft beers that celebrate tradition while embracing innovation.</p>
+                            <p>Our master brewers combine time-honored techniques with carefully selected ingredients to produce beers that are both distinctive and memorable.</p>
+                            <p>From our small brewery to your table, every bottle represents our commitment to quality and passion for the craft.</p>
+                            <a href="#contact" class="btn btn-primary">Visit Our Brewery</a>
+                        </div>
+                        <div class="about-image"></div>
+                    </div>
+                </div>
+                
+                <div style="padding: 80px 40px; background: white;">
+                    <div style="text-align: center; margin-bottom: 48px;">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 24px; color: #2c3e50;">Why Choose BrewCraft?</h2>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+                        <div style="text-align: center; padding: 24px;">
+                            <div style="width: 80px; height: 80px; background-image: url(/img/beer-brewery-traditional-way-making-beer-real-48843384.webp); background-size: cover; background-position: center; border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;"></div>
+                            <h3 style="margin-bottom: 12px;">Traditional Methods</h3>
+                            <p>Time-tested brewing techniques passed down through generations.</p>
+                        </div>
+
+                        
+                        <div style="text-align: center; padding: 24px;">
+                            <div style="width: 80px; height: 80px; background-image: url(/img/Best-Of-Craft-Beer-Awards-Gold-Medal.jpg); background-size: cover; background-position: center; border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;"></div>
+                            <h3 style="margin-bottom: 12px;">Award Winning</h3>
+                            <p>Recognized by beer enthusiasts and critics worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 4: Contact -->
+    <div class="wireframe-section" id="contact">
+        <div class="wireframe-content">
+            <div class="wireframe">
+                <div class="contact-section">
+                    <div style="text-align: center; margin-bottom: 48px;">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 24px; color: #2c3e50;">Get In Touch</h2>
+                        <p style="font-size: 1.1rem; color: #666;">Have questions about our beers or want to visit our brewery?</p>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+                        <div class="contact-form">
+                            <h3 style="margin-bottom: 24px; color: #2c3e50;">Send us a message</h3>
+                            <form>
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" id="subject" name="subject">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                        
+                        <div style="padding-left: 24px;">
+                            <h3 style="margin-bottom: 24px; color: #2c3e50;">Visit Our Brewery</h3>
+                            <div style="margin-bottom: 24px;">
+                                <h4 style="color: #d4af37; margin-bottom: 8px;">Address</h4>
+                                <p>123 Brew Street<br>Craft City, CC 12345<br>United States</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 24px;">
+                                <h4 style="color: #d4af37; margin-bottom: 8px;">Hours</h4>
+                                <p>Monday - Thursday: 12pm - 10pm<br>Friday - Saturday: 12pm - 12am<br>Sunday: 12pm - 8pm</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 24px;">
+                                <h4 style="color: #d4af37; margin-bottom: 8px;">Contact</h4>
+                                <p>Phone: (555) 123-4567<br>Email: info@brewcraft.com</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 24px;">
+                                <h4 style="color: #d4af37; margin-bottom: 8px;">Follow Us</h4>
+                                <div style="display: flex; gap: 16px;">
+                                    <a href="#" style="color: #d4af37; text-decoration: none; font-size: 18px;">Facebook</a>
+                                    <a href="#" style="color: #d4af37; text-decoration: none; font-size: 18px;">Instagram</a>
+                                    <a href="#" style="color: #d4af37; text-decoration: none; font-size: 18px;">Twitter</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="wireframe-section">
+        <div class="wireframe-content">
+            <div class="wireframe">
+                <div class="footer">
+                    <div class="footer-content">
+                        <div class="footer-section">
+                            <h3>BrewCraft</h3>
+                            <p>Crafting exceptional beers since 2015. Experience the perfect balance of tradition and innovation in every sip.</p>
+                            <div style="margin-top: 16px;">
+                                <a href="#" style="color: #d4af37; text-decoration: none; margin-right: 16px;">Facebook</a>
+                                <a href="#" style="color: #d4af37; text-decoration: none; margin-right: 16px;">Instagram</a>
+                                <a href="#" style="color: #d4af37; text-decoration: none;">Twitter</a>
+                            </div>
+                        </div>
+                        
+                        <div class="footer-section">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#products">Our Beers</a></li>
+                                <li><a href="#about">About Us</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                                <li><a href="#tours">Brewery Tours</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-section">
+                            <h3>Products</h3>
+                            <ul>
+                                <li><a href="#">Golden Harvest Ale</a></li>
+                                <li><a href="#">Midnight Stout</a></li>
+                                <li><a href="#">Hoppy IPA</a></li>
+                                <li><a href="#">Summer Wheat</a></li>
+                                <li><a href="#">Seasonal Specials</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-section">
+                            <h3>Contact Info</h3>
+                            <p>123 Brew Street<br>Craft City, CC 12345</p>
+                            <p>Phone: (555) 123-4567<br>Email: info@brewcraft.com</p>
+                            <p style="margin-top: 16px;">
+                                <strong>Hours:</strong><br>
+                                Mon-Thu: 12pm-10pm<br>
+                                Fri-Sat: 12pm-12am<br>
+                                Sun: 12pm-8pm
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 BrewCraft. All rights reserved. | Privacy Policy | Terms of Service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Popup Example -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Welcome to BrewCraft!</h2>
+            <p>🍺 Get 15% off your first order when you sign up for our newsletter!</p>
+            <form style="margin-top: 24px;">
+                <div class="form-group">
+                    <input type="email" placeholder="Enter your email address" style="margin-bottom: 16px;">
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-right: 12px;">Get Discount</button>
+                <button type="button" class="btn btn-secondary" onclick="closeModal()">Maybe Later</button>
+            </form>
+        </div>
+    </div>
+
+    
